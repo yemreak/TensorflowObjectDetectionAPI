@@ -1,4 +1,4 @@
-# YTensorflow  <!-- omit in toc -->
+# YTensorflow  <!-- omit in toc  -->
 
 <!-- Private olduğundan çalışmaz 
 ![GitHub last commit](https://img.shields.io/github/last-commit/yedhrab/YTensorflow.svg?label=Son%20G%C3%BCncelleme&style=popout)
