@@ -1,0 +1,11 @@
+# VsCode Dizinleri
+.vscode
+
+# Windows 10 dosyaları
+desktop.ini
+
+# Python ön bellek dosyaları
+__pycache__
+
+# Models dizini içeriği
+models
