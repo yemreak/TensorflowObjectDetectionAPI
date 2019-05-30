@@ -97,16 +97,16 @@ Bu yazı **MIT** lisanslıdır. Lisanslar hakkında bilgi almak için [buraya](h
     - [Eğitimi Etkileyen Faktörler](#e%C4%9Fitimi-etkileyen-fakt%C3%B6rler)
     - [Eğitim İşlemini TensorBoard Kullanarak Takip Etme](#e%C4%9Fitim-i%CC%87%C5%9Flemini-tensorboard-kullanarak-takip-etme)
     - [Sonuç Grafiğini Dışarı Aktarma](#sonu%C3%A7-grafi%C4%9Fini-d%C4%B1%C5%9Far%C4%B1-aktarma)
-  - [Hata Notları ve Açıklamaları](#hata-notlar%C4%B1-ve-a%C3%A7%C4%B1klamalar%C4%B1)
-    - ['conda' is not recognized as an internal or external command](#conda-is-not-recognized-as-an-internal-or-external-command)
-    - ['...' is not recognized as an internal or external command](#is-not-recognized-as-an-internal-or-external-command)
-    - ['ImportError: No module named' Hataları](#importerror-no-module-named-hatalar%C4%B1)
-    - ['dict_keys' object does not support indexing](#dictkeys-object-does-not-support-indexing)
-    - [Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>)](#object-was-never-used-type-class-tensorflowpythonframeworkopstensor)
-    - ['unicodeescape' codec can't decode bytes in position](#unicodeescape-codec-cant-decode-bytes-in-position)
-    - [Allocation of X exceeds 10% of system memory](#allocation-of-x-exceeds-10-of-system-memory)
-    - [google.protobuf.text_format.ParseError, Expected string but found](#googleprotobuftextformatparseerror-expected-string-but-found)
-    - [Value Error: No Variable to Save](#value-error-no-variable-to-save)
+- [Hata Notları ve Açıklamaları](#hata-notlar%C4%B1-ve-a%C3%A7%C4%B1klamalar%C4%B1)
+  - ['conda' is not recognized as an internal or external command](#conda-is-not-recognized-as-an-internal-or-external-command)
+  - ['...' is not recognized as an internal or external command](#is-not-recognized-as-an-internal-or-external-command)
+  - ['ImportError: No module named' Hataları](#importerror-no-module-named-hatalar%C4%B1)
+  - ['dict_keys' object does not support indexing](#dictkeys-object-does-not-support-indexing)
+  - [Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>)](#object-was-never-used-type-class-tensorflowpythonframeworkopstensor)
+  - ['unicodeescape' codec can't decode bytes in position](#unicodeescape-codec-cant-decode-bytes-in-position)
+  - [Allocation of X exceeds 10% of system memory](#allocation-of-x-exceeds-10-of-system-memory)
+  - [google.protobuf.text_format.ParseError, Expected string but found](#googleprotobuftextformatparseerror-expected-string-but-found)
+  - [Value Error: No Variable to Save](#value-error-no-variable-to-save)
 - [Colab Üzerinden Tensorflow Modelini Eğitme](#colab-%C3%BCzerinden-tensorflow-modelini-e%C4%9Fitme)
   - [Colab Eğitimi için Gereken Dosyalar](#colab-e%C4%9Fitimi-i%C3%A7in-gereken-dosyalar)
   - [Colab Üzeriinden Eğitim Kodları](#colab-%C3%BCzeriinden-e%C4%9Fitim-kodlar%C4%B1)
@@ -303,6 +303,8 @@ echo unset PYTHONPATH > etc/conda/deactivate.d/env_vars.sh
 - `<conda_ortamı_yolu>` Conda ortamının kurulduğu yol
   - *Örn: %USERPROFILE%\Anaconda3\envs\tensorflow-cpu*
 
+<div class="page"/>
+
 ### Modellerin Kurulumunu Test Etme
 
 Jupyter notebook ile API'ları test etmemzi gerekmekte.
@@ -352,6 +354,8 @@ pyrcc5 -o resources.py resources.qrc # QT grafiklerinin oluşturulması
 
 > *'pyrcc5' is not recognized as an internal or external command* hatası gelirse, yüklediğiniz `pyqt` sürümüne göre komutu kullanın (`pyrcc<pyqt_sürümü_ilk_basamağı>`)
 
+<div class="page"/>
+
 #### LabelImg Kurulumunu Test Etme
 
 ```sh
@@ -397,6 +401,8 @@ mkdir %TENSORFLOW%\workspace\example_detection\images\train
 mkdir %TENSORFLOW%\workspace\example_detection\images\test
 mkdir %TENSORFLOW%\workspace\example_detection\models
 ```
+
+<div class="page"/>
 
 ### Temel Dizin Yapısı
 
@@ -447,6 +453,8 @@ mkdir %TENSORFLOW%\workspace\example_detection\models
 | scripts   | Kullanacağınız ortak kod parçaları |
 | workspace | Çalışma Alanı                      |
 
+<div class="page"/>
+
 ### Çalışma Alanı Yapısı
 
 ```txt
@@ -486,6 +494,8 @@ mkdir %TENSORFLOW%\workspace\example_detection\models
 | `test.record`     | Test için kullanılacak tensorflow kayıtları (TF record)   |
 | `train.record`    | Eğitim için kullanılacak tensorflow kayıtları (TF record) |
 
+<div class="page"/>
+
 ### Models Dizini Yapısı
 
 ```txt
@@ -514,6 +524,8 @@ Her bir model için ayrı dizinler oluşturulur.
 | eval      | Dizin | Test sonuçları burada tutulur.  |
 | train     | Dizin | Eğitim çıktıları burada tutulur |
 | `.config` | Dosya | Yapılandırma dosyası            |
+
+<div class="page"/>
 
 ## Özelleştirilmiş Tensorflow Obje Algılayıcısı Eğitme
 
@@ -558,6 +570,8 @@ python xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\
 python xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\test -p test
 ```
 
+<div class="page"/>
+
 ### Etiket Haritası Oluşturma
 
 - Alttaki komutla açılan dizinde `.pbtxt` uzantılı etiket haritası dosyasısı oluşturun
@@ -596,6 +610,8 @@ item {
 - Yapılandırma dosyası olan `*.config` dosyasındaki `PATH_TO_CONFIGURED` olarak işaretlenen alanlar, `num_classes`, `num_examples` ve `batch_size` değerleri güncellenir.
   - `num_examples` test dizindeki resim sayısıdır (toplam class sayısı değil)
 
+<div class="page"/>
+
 #### Resimlerdeki Hataları Bulma
 
 Resimlerde hata olduğu zaman eğitim aşamasında tensorflow modeli çalışma hatası vermektedir. Resimleri kontrol etmek için [buradaki](scripts\preprocessing\check_images.py) scripti alttaki komutlarla kullanabilirsiniz.
@@ -628,6 +644,8 @@ python scripts\preprocessing\find_unlabeled_imgs.py -i %TENSORFLOW%\workspace\ex
 python scripts\preprocessing\find_unlabeled_imgs.py -i %TENSORFLOW%\workspace\example_detection\images\test
 ```
 
+<div class="page"/>
+
 #### XML'i CSV'ye Çevirme
 
 XML dosyalarını CSV dosyasında toparlamak için [buradaki](scripts\preprocessing\xml_to_csv.py) scripti alttaki komutlar ile kullanabilirsin.
@@ -658,6 +676,8 @@ Her bir etiketten kaç tane olduğunu anlamak için csv dosyalarını açıp all
 ![csv](res\csv_table2.jpeg)
 ![csv](res\csv_table3.jpeg)
 ![csv](res\csv_table4.jpeg)
+
+<div class="page"/>
 
 #### CSV'yi Record'a Çevirme
 
@@ -697,6 +717,8 @@ cd %TENSORFLOW%\workspace\example_detection\pre_trained_model
   - *Örn: ssd_inception_v2_coco_2018_01_28*
   - *Örn: ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03*
 
+<div class="page"/>
+
 #### Modellin Yapılandırma Dosyaları
 
 Seçtiğiniz modelin `*.config` dosyasını `example_detection/training` klasörü altına kopyalamanız gerekmekte.
@@ -728,6 +750,8 @@ Yapılandırma örnek dosyası için [buraya](workspace\traffic_light_detector\t
 | `label_map_path`       | Etiket haritası yolu   | `"./annotations/train.record"`     |
 | `input_path`           | Train dosyası yolu     | `"./annotations/train.record"`     |
 | `input_path`           | Test dosyası yolu      | `"./annotations/test.record"`      |
+
+<div class="page"/>
 
 ### Modeli Eğitme
 
@@ -766,6 +790,8 @@ python train.py --logtostderr --train_dir=training/ --pipeline_config_path=train
   - **training** klasörüne attığımız yapılandırma dosyaları
   - *Örn: ssd_inception_v2_coco.config*
 
+<div class="page"/>
+
 ##### Eğitime Başladığında Gelen Örnek Çıktı
 
 ```sh
@@ -798,6 +824,8 @@ INFO:tensorflow:global step 13: loss = 7.4329 (0.906 sec/step)
 INFO:tensorflow:global step 14: loss = 7.8270 (0.897 sec/step)
 INFO:tensorflow:global step 15: loss = 6.4877 (0.894 sec/step)
 ```
+
+<div class="page"/>
 
 #### Modeli model_main.py Dosyası ile Eğitme
 
@@ -833,6 +861,8 @@ cp -r pycocotools /content/models/research/
 cd ../..
 rm -rf cocoapi
 ```
+
+<div class="page"/>
 
 ##### Eğitimi Hazırlama ve Başlatma
 
@@ -879,6 +909,8 @@ size of ships, combined with a highly dynamic background.
 
 - And many, many, many, more. . . .
 
+<div class="page"/>
+
 #### Eğitim İşlemini TensorBoard Kullanarak Takip Etme
 
 **Anaconda Prompt** üzerinden alttaki komutlar uygulanır:
@@ -916,17 +948,19 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 - `<checkpoint>` **example_detection/training** dizinindeki gösterilmek istenen adımın numarası
   - *Örn: 13302*
 
-### Hata Notları ve Açıklamaları
+<div class="page"/>
 
-#### 'conda' is not recognized as an internal or external command
+## Hata Notları ve Açıklamaları
+
+### 'conda' is not recognized as an internal or external command
 
 `Anaconda Prompt` üzerinden terminal işlemlerinize devam etmeniz durumunda sorun gidecektir.
 
-#### '...' is not recognized as an internal or external command
+### '...' is not recognized as an internal or external command
 
 [Gerekli Paketlerin Kurulumları](#gerekli-paketlerin-kurulumlar%C4%B1) tamamnlanmadığı için bu hata ile karşılaşıyor olabilirsiniz.
 
-#### 'ImportError: No module named' Hataları
+### 'ImportError: No module named' Hataları
 
 PythonPath ayarlanmadığı için bu hata ile karşılaşmaktasınız.
 
@@ -936,7 +970,7 @@ set PYTHONPATH=%TENSORFLOW%\models\research;%TENSORFLOW%\models\research\slim;%T
 
 > Dökümandaki ilgili alana yönelmek için [buraya](#gerekli-ortam-de%C4%9Fi%C5%9Fkenlerinin-tan%C4%B1mlanmas%C4%B1) tıklayabilrisin.
 
-#### 'dict_keys' object does not support indexing
+### 'dict_keys' object does not support indexing
 
 Açıklama linki için [buraya](https://github.com/tensorflow/models/pull/6044/files) bakabilirsin.
 
@@ -950,20 +984,22 @@ start %TENSORFLOW%\models\research\object_detection\models\feature_map_generator
 image_features = image_features[list(image_features.keys())[0]]
 ```
 
-#### Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>)
+### Object was never used (type <class 'tensorflow.python.framework.ops.Tensor'>)
 
 > Yakında..
 
-#### 'unicodeescape' codec can't decode bytes in position
+### 'unicodeescape' codec can't decode bytes in position
 
 Modelinizin `.config` dosyanıza yazdığın tam yol verilerinde `\` yerine `/` veya `\\` kullanmalısınız.
 
-#### Allocation of X exceeds 10% of system memory
+### Allocation of X exceeds 10% of system memory
 
 - Rastgeldiğim bu [kaynağa](https://github.com/tensorflow/tensorflow/issues/18736#issuecomment-385976699) göre **ssd_mobilenet_v2_coco modeline** özgü bir hatadır.
 - Hatanın çözüm kaynağı için [buraya](https://github.com/tensorflow/tensorflow/issues/18736#issuecomment-388709455) tıklayabilirsin
 
-#### google.protobuf.text_format.ParseError, Expected string but found
+<div class="page"/>
+
+### google.protobuf.text_format.ParseError, Expected string but found
 
 Config dosyalarının text editör üzerinden düzenlemesi durumunda, türkçe karakterler için text editörü yapıyı değiştirmekte ve tensorflow bunu algılayamamaktadır. Sorunu çözmek için alttakiler yardımıyla `.config` dosyasını düzenleyin:
 
@@ -974,7 +1010,7 @@ Config dosyalarının text editör üzerinden düzenlemesi durumunda, türkçe k
 
 > Harici kaynak için [buraya](https://github.com/tensorflow/models/issues/1897#issuecomment-313879598) bakabilirsin.
 
-#### Value Error: No Variable to Save
+### Value Error: No Variable to Save
 
 Model eğitimi yapıldığı sırada gelen bir hatadır, çözümü için `.config`dosyanızı bu şekilde düzenleyin:
 
@@ -1010,6 +1046,8 @@ Detayları öğrenmek için [buraya](https://colab.research.google.com/drive/1Jv
 
 Script dosyasına [buraya](scripts\detection\detect_from_webcam.py) tıklayarak erişebilirsin
 
+<div class="page"/>
+
 ## Harici Bağlantılar
 
 - [Traffic Light Detection Using the TensorFlow* Object Detection API](https://software.intel.com/en-us/articles/traffic-light-detection-using-the-tensorflow-object-detection-api)
@@ -1033,6 +1071,8 @@ Script dosyasına [buraya](scripts\detection\detect_from_webcam.py) tıklayarak 
 ## Önemli Notlar
 
 - `train.py` işlemi için `images` dizinindeki resimlere ihtiyaç yok, tf_records'lar yeterlidir.
+
+<div class="page"/>
 
 ## Yapılacaklar
 
@@ -1078,6 +1118,8 @@ Script dosyasına [buraya](scripts\detection\detect_from_webcam.py) tıklayarak 
 
 - [ ] Yaptığım tekninleri video'ya veya yazıya kayıt edeceğim
   - [ ] csv'lerden alanı seçip tablo formatına alarak class sayılarını görme vs.
+
+<div class="page"/>
 
 #### TF Verilerini Alma
 
