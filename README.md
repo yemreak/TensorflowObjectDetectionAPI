@@ -9,26 +9,7 @@
 
 <!-- > *Yunus Emre Ak* ile çalışılmıştır. -->
 
-Bu yazı **MIT** lisanslıdır. Lisanslar hakkında bilgi almak için [buraya](https://choosealicense.com/licenses/) bakmanda fayda var.
-
 - Copyright © ~ *Yunus Emre AK*
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
-</script>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
----
-
-![PDF Yapısı Hakkında Bilgilendirme](https://bit.ly/2QmZtIc)
-
----
 
 <div class="page"/>
 
