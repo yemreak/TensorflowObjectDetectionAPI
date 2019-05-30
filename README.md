@@ -7,14 +7,35 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/yedhrab/YTensorflow.svg?label=Boyut&style=popout)
 -->
 
-- Python dili üzerinde makine öğrenimi gibi işlemler için Google tarafından sunulan kütüphanedir.
-- Yabancı Kaynaklar: [📺](https://youtu.be/COlbP62-B-U) [📄](https://buildmedia.readthedocs.org/media/pdf/tensorflow-object-detection-api-tutorial/latest/tensorflow-object-detection-api-tutorial.pdf)
+<!-- > *Yunus Emre Ak* ile çalışılmıştır. -->
+
+Bu yazı **MIT** lisanslıdır. Lisanslar hakkında bilgi almak için [buraya](https://choosealicense.com/licenses/) bakmanda fayda var.
+
+- Copyright © ~ *Yunus Emre AK*
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+![PDF Yapısı Hakkında Bilgilendirme](https://bit.ly/2QmZtIc)
+
+---
+
+<div class="page"/>
 
 ## İçerikler <!-- omit in toc -->
 
-> `HOME` tuşu ile yukarı yönlenebilrsiniz.
-
-- [Hangi İşletim Sistemi Daha iyi](#hangi-i%CC%87%C5%9Fletim-sistemi-daha-iyi)
+- [Temel Bilgileri](#temel-bilgileri)
+  - [Hangi İşletim Sistemi Daha iyi](#hangi-i%CC%87%C5%9Fletim-sistemi-daha-iyi)
 - [Tensorflow Kurulumu](#tensorflow-kurulumu)
   - [Anaconda Kurulumu](#anaconda-kurulumu)
   - [Tensorflow CPU veya GPU Kurulumu](#tensorflow-cpu-veya-gpu-kurulumu)
@@ -101,7 +122,14 @@
       - [Recover the images from the TFRecord file](#recover-the-images-from-the-tfrecord-file)
 - [Lisans ve Teferruatlar](#lisans-ve-teferruatlar)
 
-## Hangi İşletim Sistemi Daha iyi
+<div class="page"/>
+
+## Temel Bilgileri
+
+- Python dili üzerinde makine öğrenimi gibi işlemler için Google tarafından sunulan kütüphanedir.
+- Yabancı Kaynaklar: [📺](https://youtu.be/COlbP62-B-U) [📄](https://buildmedia.readthedocs.org/media/pdf/tensorflow-object-detection-api-tutorial/latest/tensorflow-object-detection-api-tutorial.pdf)
+
+### Hangi İşletim Sistemi Daha iyi
 
 Linux daha iyidir 🐧
 
@@ -141,6 +169,8 @@ python -c
 >>> sess = tf.Session()
 >>> print(sess.run(hello))
 ```
+
+<div class="page"/>
 
 ## Tensorflow Algılama Modellerinin Kurulumu
 
@@ -191,6 +221,8 @@ move models %TENSORFLOW%
 cd %TENSORFLOW%\models\research\
 ```
 
+<div class="page"/>
+
 #### Models Klasörü Yapısı
 
 ```txt
@@ -226,6 +258,8 @@ protoc object_detection/protos/*.proto --python_out=.
 python setup.py build
 python setup.py install
 ```
+
+<div class="page"/>
 
 ### Gerekli Ortam Değişkenlerinin Tanımlanması
 
