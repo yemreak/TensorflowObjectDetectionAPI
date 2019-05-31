@@ -300,7 +300,7 @@ echo unset PYTHONPATH > etc/conda/deactivate.d/env_vars.sh
 
 ### Modellerin Kurulumunu Test Etme
 
-Jupyter notebook ile API'ları test etmemzi gerekmekte.
+Jupyter notebook ile API'ları eval etmemzi gerekmekte.
 
 ```sh
 cd object_detection
@@ -391,7 +391,7 @@ Proje yapısı tavsiye edilen dizin yapısına örnek olacak şekilde oluşturul
 mkdir %TENSORFLOW%\workspace\example_detection
 mkdir %TENSORFLOW%\workspace\example_detection\data
 mkdir %TENSORFLOW%\workspace\example_detection\images\train
-mkdir %TENSORFLOW%\workspace\example_detection\images\test
+mkdir %TENSORFLOW%\workspace\example_detection\images\eval
 mkdir %TENSORFLOW%\workspace\example_detection\models
 ```
 
@@ -465,7 +465,7 @@ mkdir %TENSORFLOW%\workspace\example_detection\models
 
 | Dizin | Açıklama                                                                      |
 | ----- | ----------------------------------------------------------------------------- |
-| data  | Eğitime katılacak verileri (*test.record, train.record, label_map*) içeririr. |
+| data  | Eğitime katılacak verileri (*eval.record, train.record, label_map*) içeririr. |
 | model | Eğitilecek modellerin dosyalarını içerir.                                     |
 
 ### Data Dizini Yapısı
@@ -474,7 +474,7 @@ mkdir %TENSORFLOW%\workspace\example_detection\models
 + example_detection
     + data
         - label_map.pbtxt
-        - test.record
+        - eval.record
         - train.record
     + models
     ...
@@ -484,7 +484,7 @@ mkdir %TENSORFLOW%\workspace\example_detection\models
 | Dosya             | Açıklama                                                  |
 | ----------------- | --------------------------------------------------------- |
 | `label_map.pbtxt` | Etiket haritası dosyası                                   |
-| `test.record`     | Test için kullanılacak tensorflow kayıtları (TF record)   |
+| `eval.record`     | Test için kullanılacak tensorflow kayıtları (TF record)   |
 | `train.record`    | Eğitim için kullanılacak tensorflow kayıtları (TF record) |
 
 <div class="page"/>
@@ -560,7 +560,7 @@ XML ve resim dosyalarını başka bir yolda oluşturduyasan alttaki script yard�
 python xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\train -p train
 
 # Test verilerini yeniden adlandırma ve düzeltme
-python xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\test -p test
+python xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\eval -p eval
 ```
 
 <div class="page"/>
@@ -592,7 +592,7 @@ item {
 
 - **Resim** verileri toplanır veya çekilir.
 - Toplanan resimler `labelimg` yardımıyla etiketlenir ve `.xml` uzantılı dosyaları oluşturulur.
-- `images` dizinine **resimler** ve onlara ait **xml** dosyaları %80'i test %20'i test olacak şekilde klasörlere ayrılarak yerleştirilir.
+- `images` dizinine **resimler** ve onlara ait **xml** dosyaları %80'i train %20'i eval olacak şekilde klasörlere ayrılarak yerleştirilir.
 - `scripts/preprocessing` dizindeki `xml_path_regulator.py` scripti aracılığıyla xml ve resimlerde yol sorunları düzeltilir, veriler yeniden adlandırılır.
 - `scripts/preprocessing` dizindeki `xml_to_csv.py` scripti aracılığıyla veriler `.csv` uzantılı tablosal bir dosyaya dönüştürülür.
 - Oluşturulan **csv** dosyasında resimlerin etiketlerine göre sayıları [tablo](#Excel%20ile%20Tablo%20G%C3%B6sterimi) olarak gösterilir. (Excel yardımıyla)
@@ -601,7 +601,7 @@ item {
 - Oluşturulan **csv**, **etiket haritası** ve **resim** verileri `scripts/preprocessing` dizindeki `generate_tfrecord.py` scripti aracılığıyla veriler `.record` uzantılı kayıtlara dönüştürülür.
 - Seçilen modele özgü yapılandırma dosyası indirilir.
 - Yapılandırma dosyası olan `*.config` dosyasındaki `PATH_TO_CONFIGURED` olarak işaretlenen alanlar, `num_classes`, `num_examples` ve `batch_size` değerleri güncellenir.
-  - `num_examples` test dizindeki resim sayısıdır (toplam class sayısı değil)
+  - `num_examples` eval dizindeki resim sayısıdır (toplam class sayısı değil)
 
 <div class="page"/>
 
@@ -612,7 +612,7 @@ Resimlerde hata olduğu zaman eğitim aşamasında tensorflow modeli çalışma 
 ```bat
 python scripts\preprocessing\check_images.py -i workspace\example_detection\images\train
 
-python scripts\preprocessing\check_images.py -i workspace\example_detection\images\test
+python scripts\preprocessing\check_images.py -i workspace\example_detection\images\eval
 ```
 
 #### Verileri Yeniden Adlandırma ve XML Hatalarını Düzeltme
@@ -622,7 +622,7 @@ LabelImg ile etiketlediğiniz resimleri farklı bir dizine taşımanız durumund
 ```bat
 python scripts\preprocessing\xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\train  -p train
 
-python scripts\preprocessing\xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\test  -p test
+python scripts\preprocessing\xml_path_regulator.py -i %TENSORFLOW%\workspace\example_detection\images\eval  -p eval
 ```
 
 #### Etiketlenmemiş Resimleri Bulma
@@ -634,7 +634,7 @@ Etiketlenmemiş resimleri [buradaki](scripts\preprocessing\find_unlabeled_imgs.p
 ```bat
 python scripts\preprocessing\find_unlabeled_imgs.py -i %TENSORFLOW%\workspace\example_detection\images\train
 
-python scripts\preprocessing\find_unlabeled_imgs.py -i %TENSORFLOW%\workspace\example_detection\images\test
+python scripts\preprocessing\find_unlabeled_imgs.py -i %TENSORFLOW%\workspace\example_detection\images\eval
 ```
 
 <div class="page"/>
@@ -649,8 +649,8 @@ XML dosyalarını CSV dosyasında toparlamak için [buradaki](scripts\preprocess
 # Create train data:
 python scripts\preprocessing\xml_to_csv.py -i %TENSORFLOW%\workspace\example_detection\images\train -o %TENSORFLOW%\workspace\example_detection\images\train_labels.csv
 
-# Create test data:
-python scripts\preprocessing\xml_to_csv.py -i %TENSORFLOW%\workspace\example_detection\images\test -o %TENSORFLOW%\workspace\example_detection\images\test_labels.csv
+# Create eval data:
+python scripts\preprocessing\xml_to_csv.py -i %TENSORFLOW%\workspace\example_detection\images\eval -o %TENSORFLOW%\workspace\example_detection\images\test_labels.csv
 ```
 
 #### CSV'lerden Resim Bilgilerini Analiz Etme
@@ -681,7 +681,7 @@ CSV dosyalarını TF kayıtlarına çevirmek için [buradaki](scripts\preprocess
 ```bat
 python generate_tfrecord.py --label_map=%TENSORFLOW%\workspace\example_detection\data\label_map.pbtxt --csv_input=%TENSORFLOW%\workspace\example_detection\images\train_labels.csv --img_path=%TENSORFLOW%\workspace\example_detection\images\train --output_path=%TENSORFLOW%\workspace\example_detection\data\train.record
 
-python generate_tfrecord.py --label_map=%TENSORFLOW%\workspace\example_detection\data\label_map.pbtxt --csv_input=%TENSORFLOW%\workspace\example_detection\images\test_labels.csv --img_path=%TENSORFLOW%\workspace\example_detection\images\test --output_path=%TENSORFLOW%\workspace\example_detection\data\test.record
+python generate_tfrecord.py --label_map=%TENSORFLOW%\workspace\example_detection\data\label_map.pbtxt --csv_input=%TENSORFLOW%\workspace\example_detection\images\test_labels.csv --img_path=%TENSORFLOW%\workspace\example_detection\images\eval --output_path=%TENSORFLOW%\workspace\example_detection\data\eval.record
 ```
 
 ### Bağlantıları (pipeline) Yapılandırma
@@ -742,7 +742,7 @@ Yapılandırma örnek dosyası için [buraya](workspace\traffic_light_detector\t
 | `fine_tune_checkpoint` | Eğitilmiş modelin yolu | `"./pre_trained_model/model.ckpt"` |
 | `label_map_path`       | Etiket haritası yolu   | `"./annotations/train.record"`     |
 | `input_path`           | Train dosyası yolu     | `"./annotations/train.record"`     |
-| `input_path`           | Test dosyası yolu      | `"./annotations/test.record"`      |
+| `input_path`           | Test dosyası yolu      | `"./annotations/eval.record"`      |
 
 <div class="page"/>
 
@@ -1025,7 +1025,7 @@ Colab ücretsiz GPU sunduğu için çok hızlı bir eğitim imkanı sunar.
 ### Colab Eğitimi için Gereken Dosyalar
 
 - label_map.pbtxt
-- test.record
+- eval.record
 - train.record
 - *.config
 - model_main.py (eskisi: train.py)
@@ -1089,7 +1089,7 @@ Script dosyasına [buraya](scripts\detection\detect_from_webcam.py) tıklayarak 
   - [ ] `generate.tfrecord.py` içerisinde tüm diğer scriptler eklenecek ve `FROM: ?` ile xml veya csv bilgisi alacak
   - [ ] Benim yapıma uygun yapıya sahip olanların CLI parametresi vermesine gerek olmayacak
 - [ ] El ile yapılan tüm işlemler otomatize edilecek
-  - [ ] `images` içindeki test, train adlı dizinlerin ismi otomatik alınacak
+  - [ ] `images` içindeki eval, train adlı dizinlerin ismi otomatik alınacak
   - [ ] `grap_images.py` script'i olacak ve resimleri gerekli dizinlere yerleştirmek için yol alacak (yerleştirileceklerin yolu)
   - [ ] Etiketli veriler hazır olduğunda tek bir script `generate_tf_data` ile  direk eğitime hazır hale getirilecek
     - [ ] label_map csv'den alınacak

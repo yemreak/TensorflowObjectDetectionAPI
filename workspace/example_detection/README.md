@@ -4,7 +4,7 @@ Düzgün ve verimli çalışmak için buradaki yapıyı kullanmanız önerilir.
 
 ## Temel Yapı
 
-```sh
+```txt
 + addons
 + docs
 + models
@@ -53,7 +53,7 @@ Düzgün ve verimli çalışmak için buradaki yapıyı kullanmanız önerilir.
 
 ### Çalışma Alanı Yapısı
 
-```sh
+```txt
 + workspace
     + example_detection
         + data
@@ -68,16 +68,16 @@ Düzgün ve verimli çalışmak için buradaki yapıyı kullanmanız önerilir.
 
 | Dizin | Açıklama                                                                      |
 | ----- | ----------------------------------------------------------------------------- |
-| data  | Eğitime katılacak verileri (*test.record, train.record, label_map*) içeririr. |
+| data  | Eğitime katılacak verileri (*eval.record, train.record, label_map*) içeririr. |
 | model | Eğitilecek modellerin dosyalarını içerir.                                     |
 
 #### Data Dizini Yapısı
 
-```sh
+```txt
 + example_detection
     + data
         - label_map.pbtxt
-        - test.record
+        - eval.record
         - train.record
     + models
     ...
@@ -87,12 +87,12 @@ Düzgün ve verimli çalışmak için buradaki yapıyı kullanmanız önerilir.
 | Dosya             | Açıklama                                                  |
 | ----------------- | --------------------------------------------------------- |
 | `label_map.pbtxt` | Etiket haritası dosyası                                   |
-| `test.record`     | Test için kullanılacak tensorflow kayıtları (TF record)   |
+| `eval.record`     | Test için kullanılacak tensorflow kayıtları (TF record)   |
 | `train.record`    | Eğitim için kullanılacak tensorflow kayıtları (TF record) |
 
 #### Models Dizini Yapısı
 
-```sh
+```txt
 + example_detection
     + data
     + models
@@ -123,7 +123,7 @@ Her bir model için ayrı dizinler oluşturulur.
 
 - **Resim** verileri toplanır veya çekilir.
 - Toplanan resimler `labelimg` yardımıyla etiketlenir ve `.xml` uzantılı dosyaları oluşturulur.
-- `images` dizinine **resimler** ve onlara ait **xml** dosyaları %80'i test %20'i test olacak şekilde klasörlere ayrılarak yerleştirilir.
+- `images` dizinine **resimler** ve onlara ait **xml** dosyaları %80'i train %20'i eval olacak şekilde klasörlere ayrılarak yerleştirilir.
 - `scripts/preprocessing` dizindeki `xml_path_regulator.py` scripti aracılığıyla xml ve resimlerde yol sorunları düzeltilir, veriler yeniden adlandırılır.
 - `scripts/preprocessing` dizindeki `xml_to_csv.py` scripti aracılığıyla veriler `.csv` uzantılı tablosal bir dosyaya dönüştürülür.
 - Oluşturulan **csv** dosyasında resimlerin etiketlerine göre sayıları [tablo](#Excel%20ile%20Tablo%20G%C3%B6sterimi) olarak gösterilir. (Excel yardımıyla)
