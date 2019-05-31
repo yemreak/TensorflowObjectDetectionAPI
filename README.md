@@ -11,6 +11,18 @@
 
 - Copyright © ~ *Yunus Emre AK*
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+![PDF Yapısı Hakkında Bilgilendirme](https://bit.ly/2QmZtIc)
+
+---
+
 <div class="page"/>
 
 ## İçerikler <!-- omit in toc -->
