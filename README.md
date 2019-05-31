@@ -665,10 +665,10 @@ Her bir etiketten kaç tane olduğunu anlamak için csv dosyalarını açıp all
 - Tablo'dan etiketlenen verileri kontrol edin
 - Fazladan etiketlenmiş verilerin ismini bulup, filename, width vs. verilerin yazıldığı alanda `CTRL` + `F` komutu ile aratıp, uygun dosya ismini ve `xml` dosyasını silin
 
-![csv](res\csv_table1.jpeg)
-![csv](res\csv_table2.jpeg)
-![csv](res\csv_table3.jpeg)
-![csv](res\csv_table4.jpeg)
+![csv](res/csv_table1.jpeg)
+![csv](res/csv_table2.jpeg)
+![csv](res/csv_table3.jpeg)
+![csv](res/csv_table4.jpeg)
 
 <div class="page"/>
 
