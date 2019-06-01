@@ -50,7 +50,6 @@ python labelImg.py ..\..\workspace\example_detection\images # çıktıları hede
 
 ### LabelImg Kısayolları
 
-<kbd></kbd>
 | Kısayol                | Açıklama         |
 | ---------------------- | ---------------- |
 | <kbd>D</kbd>           | ileri            |
