@@ -5,17 +5,22 @@
 - [Tensorflow Dizininizi Geçici Ortam Değişkenlerine Ekleme](#tensorflow-dizininizi-ge%C3%A7ici-ortam-de%C4%9Fi%C5%9Fkenlerine-ekleme)
 - [Tensorflow Dizininizi Kalıcı Olarak Ortam Değişkenlerine Ekleme](#tensorflow-dizininizi-kal%C4%B1c%C4%B1-olarak-ortam-de%C4%9Fi%C5%9Fkenlerine-ekleme)
 - [Temel Klasörlerin Oluşturulması](#temel-klas%C3%B6rlerin-olu%C5%9Fturulmas%C4%B1)
+  - [Windows için Temel Klasörleri Oluşturma](#windows-i%C3%A7in-temel-klas%C3%B6rleri-olu%C5%9Fturma)
+  - [Linux için Temel Klasörleri Oluşturma](#linux-i%C3%A7in-temel-klas%C3%B6rleri-olu%C5%9Fturma)
 - [Temel Dizin Yapısı](#temel-dizin-yap%C4%B1s%C4%B1)
 - [Çalışma Alanı Yapısı](#%C3%A7al%C4%B1%C5%9Fma-alan%C4%B1-yap%C4%B1s%C4%B1)
 - [Data Dizini Yapısı](#data-dizini-yap%C4%B1s%C4%B1)
 - [Models Dizini Yapısı](#models-dizini-yap%C4%B1s%C4%B1)
 
+<div class="page"/>
+
 ## Tensorflow Dizininizi Geçici Ortam Değişkenlerine Ekleme
 
 Alttaki komut yardımıyla açık olan cmd ekranına ortam değişkeni tanımlayabilirsiniz.
 
-```cmd
-set TENSORFLOW=<dizin_yolu>
+```sh
+set TENSORFLOW=<dizin_yolu> # Windows
+export TENSORFLOW=<dizin_yolu> # Linux
 ```
 
 - `<dizin_yolu>` Tensorflow'u kurmak istediğiniz dizin
@@ -37,12 +42,24 @@ Proje yapısı tavsiye edilen dizin yapısına örnek olacak şekilde oluşturul
 
 > Düzgün ve verimli çalışmak için buradaki yapıyı kullanmanız önerilir.
 
+### Windows için Temel Klasörleri Oluşturma
+
 ```bat
 mkdir %TENSORFLOW%\workspace\example_detection
 mkdir %TENSORFLOW%\workspace\example_detection\data
 mkdir %TENSORFLOW%\workspace\example_detection\images\train
 mkdir %TENSORFLOW%\workspace\example_detection\images\eval
 mkdir %TENSORFLOW%\workspace\example_detection\models
+```
+
+### Linux için Temel Klasörleri Oluşturma
+
+```sh
+mkdir -P $TENSORFLOW/workspace/example_detection
+mkdir -P $TENSORFLOW/workspace/example_detection/data
+mkdir -P $TENSORFLOW/workspace/example_detection/images/train
+mkdir -P $TENSORFLOW/workspace/example_detection/images/eval
+mkdir -P $TENSORFLOW/workspace/example_detection/models
 ```
 
 <div class="page"/>
