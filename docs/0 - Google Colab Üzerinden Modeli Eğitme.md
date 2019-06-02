@@ -3,8 +3,10 @@
 ## İçerikler <!-- omit in toc -->
 
 - [Temel Bilgiler](#temel-bilgiler)
-- [Colab Eğitimi için Gereken Dosyalar](#colab-e%C4%9Fitimi-i%C3%A7in-gereken-dosyalar)
-  - [İsteğe Bağlı Dosyalar](#i%CC%87ste%C4%9Fe-ba%C4%9Fl%C4%B1-dosyalar)
+- [Colab Eğitimi için Gereksinimler](#colab-e%C4%9Fitimi-i%C3%A7in-gereksinimler)
+  - [Ekran Kartını Aktif Etme](#ekran-kart%C4%B1n%C4%B1-aktif-etme)
+  - [Eğitim için Gerekli Dosyalar](#e%C4%9Fitim-i%C3%A7in-gerekli-dosyalar)
+  - [Eğitim için İsteğe Bağlı Dosyalar](#e%C4%9Fitim-i%C3%A7in-i%CC%87ste%C4%9Fe-ba%C4%9Fl%C4%B1-dosyalar)
 - [Colab Üzeriinden Eğitim Kodları](#colab-%C3%BCzeriinden-e%C4%9Fitim-kodlar%C4%B1)
 
 ## Temel Bilgiler
@@ -15,20 +17,44 @@
 
 > Google hesabı gerektirir.
 
-## Colab Eğitimi için Gereken Dosyalar
+## Colab Eğitimi için Gereksinimler
 
-- label_map.pbtxt
-- eval.record
-- train.record
-- *.config
+Colab üzerindeki çalışma dizini
 
-### İsteğe Bağlı Dosyalar
+- Tensorflow çalışma dizinimizdeki `workspace/example_detection`
+- Tensorflow models
+- `scripts`
 
-- model_main.py (eskisi: train.py)
-- export_inference_graph.py
+kısımlarından oluşur.
+
+### Ekran Kartını Aktif Etme
+
+- `Runtime`
+- `Change runtime types`
+- `GPU`
+
+> İstersen `Omit code cell output when saving this notebook` ile çıktıları gizleyebilirsin.
+
+### Eğitim için Gerekli Dosyalar
+
+| Gereksinim        | Açıklama             |
+| ----------------- | -------------------- |
+| `label_map.pbtxt` | Etiket haritası      |
+| `eval.record`     | TF Kayıtları         |
+| `train.record`    | TF Kayıtları         |
+| `*.config`        | Model yapılandırması |
+
+### Eğitim için İsteğe Bağlı Dosyalar
+
+| Gereksinim                  | Açıklama                 |
+| --------------------------- | ------------------------ |
+| `model_main.py`             | Modeli eğitme (yeni)     |
+| `train.py`                  | Modeli eğitme (eski)     |
+| `export_inference_graph.py` | Modelin sonucunu çıkarma |
 
 ## Colab Üzeriinden Eğitim Kodları
 
-Detayları öğrenmek için [buraya](https://colab.research.google.com/drive/1JvMqUga8ALUF-YwPp4gPVZ8SjxsOoFad) tıklayarak colab notuma erişebilirsin.
+Detayları öğrenmek için [buraya][Tensorlow Obje Algılayıcısını Colab Üzerinden Eğitme] tıklayarak colab notuma erişebilirsin.
 
 [Google Colabratory]: https://colab.research.google.com/
+[Tensorlow Obje Algılayıcısını Colab Üzerinden Eğitme]: https://colab.research.google.com/drive/1JvMqUga8ALUF-YwPp4gPVZ8SjxsOoFad

@@ -1,11 +1,8 @@
-# VsCode Dizinleri
+# Kişisel Dizinler
 .vscode
 
-# Windows 10 dosyaları
-desktop.ini
-
-# Python ön bellek dosyaları
+# Python cache
 __pycache__
 
-# Models dizini içeriği
-models
+# Windows icon
+desktop.ini

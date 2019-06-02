@@ -19,8 +19,6 @@
   - [Obje Algılama Kütüphanelerinin Derlenmesi ve Yüklenmesi](#obje-alg%C4%B1lama-k%C3%BCt%C3%BCphanelerinin-derlenmesi-ve-y%C3%BCklenmesi)
   - [Gerekli Ortam Değişkenlerinin Tanımlanması](#gerekli-ortam-de%C4%9Fi%C5%9Fkenlerinin-tan%C4%B1mlanmas%C4%B1)
     - [Anaconda Ortamı için Otomatik Tanımlama](#anaconda-ortam%C4%B1-i%C3%A7in-otomatik-tan%C4%B1mlama)
-      - [Windows için Otomatik Tanımlama](#windows-i%C3%A7in-otomatik-tan%C4%B1mlama)
-      - [Linux için Otomatik Tanımlama](#linux-i%C3%A7in-otomatik-tan%C4%B1mlama)
   - [Modellerin Kurulumunu Test Etme](#modellerin-kurulumunu-test-etme)
 - [LabelImg Kurulumu](#labelimg-kurulumu)
   - [LabelImg Kaynak Kodlarını Derleme](#labelimg-kaynak-kodlar%C4%B1n%C4%B1-derleme)
@@ -34,6 +32,8 @@
 
 - Python dili üzerinde makine öğrenimi gibi işlemler için Google tarafından sunulan kütüphanedir.
 - Yabancı Kaynaklar: [📺](https://youtu.be/COlbP62-B-U) [📄](https://buildmedia.readthedocs.org/media/pdf/tensorflow-object-detection-api-tutorial/latest/tensorflow-object-detection-api-tutorial.pdf)
+- Tensorflow araştırma modellerine [buradan][Tensorflow research] erişebilirsin
+  - Her modelin içerisindeki `g3doc` adlı klasör dökümantasyonunu barındırır
 
 ### Hangi İşletim Sistemi Daha iyi
 
@@ -59,7 +59,7 @@ Kaynak için [buraya][Tensorflow hangi işletim sistemi için daha iyi] bakabilr
 
 #### Sanal Ortam Oluşturma ve Üzerine Kurma
 
-```cmd
+```bat
 conda create -n tensorflow tensorflow # CPU kurulumu
 conda create -n tensorflow tensorflow-gpu # GPU kurulumu
 ```
@@ -68,15 +68,13 @@ conda create -n tensorflow tensorflow-gpu # GPU kurulumu
 
 Alttaki komnut ile 'Hello, TensorFlow!' çıktısın almanız gerekmektedir.
 
-```cmd
+```bat
 python -c
 import tensorflow as tf
 hello = tf.constant('Hello, TensorFlow!')
 sess = tf.Session()
 print(sess.run(hello))
 ```
-
-<div class="page"/>
 
 ## Tensorflow Algılama Modellerinin Kurulumu
 
@@ -90,7 +88,7 @@ print(sess.run(hello))
 
 Tensorflow modellerini kullanabilmek için alttaki kurulumlara da ihtiyaç olabilmekte:
 
-```cmd
+```bat
 conda install opencv pillow matplotlib pandas jupyter
 ```
 
@@ -106,7 +104,7 @@ pip install opencv-contrib-python
 
 #### Script Dosyaları için Gerekli Modüller
 
-```cmd
+```bat
 pip install pynput # detect_from_desktop
 ```
 
@@ -120,14 +118,22 @@ Alttaki talimatler ve komutlar yardımıyla tensorflow modellerini kurun:
 
 > Bu adından sonrası `models/research/` dizininde gerçekleştirilmelidir.
 
-```cmd
+**Windows:**
+
+```bat
 powershell.exe Expand-Archive models-master.zip .
 ren models-master models
 move models %TENSORFLOW%
 cd %TENSORFLOW%\models\research\
 ```
 
-<div class="page"/>
+**Linux:**
+
+```sh
+unzip models-master.zip .
+mv models-master $TENSORFLOW/models
+cd $TENSORFLOW/model/research
+```
 
 #### Models Klasörü Yapısı
 
@@ -143,13 +149,13 @@ cd %TENSORFLOW%\models\research\
 
 Protobuf dosyaları (`.proto` uzantılı olan dosyalar) python kodlanı oluşturmak için kullanılan dosyalardır. `TensorFlow/models/research/` dizininde
 
-Windows:
+**Windows:**
 
 ```bat
 for /f %i in ('dir /b object_detection\protos\*.proto') do protoc object_detection\protos\%i --python_out=.
 ```
 
-Linux:
+**Linux:**
 
 ```sh
 protoc object_detection/protos/*.proto --python_out=.
@@ -165,19 +171,17 @@ python setup.py build
 python setup.py install
 ```
 
-<div class="page"/>
-
 ### Gerekli Ortam Değişkenlerinin Tanımlanması
 
 Eğer daha önceden tanımlı `PYTHONPATH` ortam değişkeniniz **yoksa ilk olan**, **varsa ikinci olan** komutu kullanın.
 
 > Bu ortam değişkenlerinin **terminalin her açılışında yazılması** gerekmetedir.
 
-```cmd
+```bat
 set PYTHONPATH=%TENSORFLOW%\models\research;%TENSORFLOW%\models\research\slim;%TENSORFLOW%\models\research\object_detection
 ```
 
-```cmd
+```bat
 set PYTHONPATH=%PYTHONPATH%;%TENSORFLOW%\models\research;%TENSORFLOW%\models\research\slim;%TENSORFLOW%\models\research\object_detection
 ```
 
@@ -186,15 +190,15 @@ set PYTHONPATH=%PYTHONPATH%;%TENSORFLOW%\models\research;%TENSORFLOW%\models\res
 - Her `conda activate <ortam_ismi>` komutu yazıldığında ortamlar dahil edilir
 - Her `conda deactivate` yazıldığında ortamlar kaldırılır
 
-##### Windows için Otomatik Tanımlama
+**Windows:**
 
-```cmd
+```bat
 cd <conda_ortamı_yolu>
 mkdir .\etc\conda\activate.d
 echo set PYTHONPATH=%TENSORFLOW%\models\research;%TENSORFLOW%\models\research\slim;%TENSORFLOW%\models\research\object_detection > .\etc\conda\activate.d\env_vars.bat
 ```
 
-##### Linux için Otomatik Tanımlama
+**Linux:**
 
 Resmi kaynak için [buraya](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#macos-and-linux) bakabilirsin.
 
@@ -208,8 +212,6 @@ echo unset PYTHONPATH > etc/conda/deactivate.d/env_vars.sh
 
 - `<conda_ortamı_yolu>` Conda ortamının kurulduğu yol
   - *Örn: %USERPROFILE%\Anaconda3\envs\tensorflow-cpu*
-
-<div class="page"/>
 
 ### Modellerin Kurulumunu Test Etme
 
@@ -246,7 +248,7 @@ conda install -c anaconda lxml
 Paketlerin kurulumu için alttaki talimatları sırayla uygulayın:
 
 - LabelImg dosyalarını indirmek için [buraya](https://github.com/tzutalin/labelImg/archive/master.zip) tıklayın
-- Diğer işlemler için indirdiğiniz dosya dizininde cmd açıp alttaki komutları yazın
+- Diğer işlemler için indirdiğiniz dosya dizininde bat açıp alttaki komutları yazın
 
 ```sh
 # labelImg-master.zip dizininde
@@ -260,8 +262,6 @@ pyrcc5 -o resources.py resources.qrc # QT grafiklerinin oluşturulması
 
 > *'pyrcc5' is not recognized as an internal or external command* hatası gelirse, yüklediğiniz `pyqt` sürümüne göre komutu kullanın (`pyrcc<pyqt_sürümü_ilk_basamağı>`)
 
-<div class="page"/>
-
 #### LabelImg Kurulumunu Test Etme
 
 ```sh
@@ -272,3 +272,4 @@ python labelImg.py
 ```
 
 [Tensorflow hangi işletim sistemi için daha iyi]: https://www.quora.com/Is-Linux-better-than-Windows-for-using-TensorFlow
+[Tensorflow research]: https://github.com/tensorflow/models/tree/master/research

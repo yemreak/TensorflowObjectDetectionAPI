@@ -2,6 +2,7 @@
 
 ## İçerikler <!-- omit in toc -->
 
+- [Linux üzerinde GTK ve FFMPEG Hataları](#linux-%C3%BCzerinde-gtk-ve-ffmpeg-hatalar%C4%B1)
 - ['conda' is not recognized as an internal or external command](#conda-is-not-recognized-as-an-internal-or-external-command)
 - ['...' is not recognized as an internal or external command](#is-not-recognized-as-an-internal-or-external-command)
 - ['ImportError: No module named' Hataları](#importerror-no-module-named-hatalar%C4%B1)
@@ -11,6 +12,14 @@
 - [Allocation of X exceeds 10% of system memory](#allocation-of-x-exceeds-10-of-system-memory)
 - [google.protobuf.text_format.ParseError, Expected string but found](#googleprotobuftextformatparseerror-expected-string-but-found)
 - [Value Error: No Variable to Save](#value-error-no-variable-to-save)
+
+## Linux üzerinde GTK ve FFMPEG Hataları
+
+Linux için hataları engellemek adına `conda` üzerinden değil `pip` üzerinden opencv kurulmalıdır.
+
+```sh
+pip install opencv-contrib-python
+```
 
 ## 'conda' is not recognized as an internal or external command
 

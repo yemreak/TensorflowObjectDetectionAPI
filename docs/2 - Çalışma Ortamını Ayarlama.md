@@ -55,11 +55,11 @@ mkdir %TENSORFLOW%\workspace\example_detection\models
 ### Linux için Temel Klasörleri Oluşturma
 
 ```sh
-mkdir -P $TENSORFLOW/workspace/example_detection
-mkdir -P $TENSORFLOW/workspace/example_detection/data
-mkdir -P $TENSORFLOW/workspace/example_detection/images/train
-mkdir -P $TENSORFLOW/workspace/example_detection/images/eval
-mkdir -P $TENSORFLOW/workspace/example_detection/models
+mkdir -p $TENSORFLOW/workspace/example_detection
+mkdir -p $TENSORFLOW/workspace/example_detection/data
+mkdir -p $TENSORFLOW/workspace/example_detection/images/train
+mkdir -p $TENSORFLOW/workspace/example_detection/images/eval
+mkdir -p $TENSORFLOW/workspace/example_detection/models
 ```
 
 <div class="page"/>
@@ -184,5 +184,3 @@ Her bir model için ayrı dizinler oluşturulur.
 | eval      | Dizin | Test sonuçları burada tutulur.  |
 | train     | Dizin | Eğitim çıktıları burada tutulur |
 | `.config` | Dosya | Yapılandırma dosyası            |
-
-<div class="page"/>
