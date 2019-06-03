@@ -57,4 +57,4 @@ kısımlarından oluşur.
 Detayları öğrenmek için [buraya][Tensorlow Obje Algılayıcısını Colab Üzerinden Eğitme] tıklayarak colab notuma erişebilirsin.
 
 [Google Colabratory]: https://colab.research.google.com/
-[Tensorlow Obje Algılayıcısını Colab Üzerinden Eğitme]: https://colab.research.google.com/drive/1JvMqUga8ALUF-YwPp4gPVZ8SjxsOoFad
+[Tensorlow Obje Algılayıcısını Colab Üzerinden Eğitme]: https://colab.research.google.com/drive/1nseyw_dIhhesbXhRyC-qwnduNlLcU0N3#scrollTo=O0rYcGTFNnbP
