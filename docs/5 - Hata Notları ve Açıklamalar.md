@@ -12,6 +12,7 @@
 - [Allocation of X exceeds 10% of system memory](#allocation-of-x-exceeds-10-of-system-memory)
 - [google.protobuf.text_format.ParseError, Expected string but found](#googleprotobuftextformatparseerror-expected-string-but-found)
 - [Value Error: No Variable to Save](#value-error-no-variable-to-save)
+- [!python Komutunda Değişkeni Okumaması](#python-komutunda-de%C4%9Fi%C5%9Fkeni-okumamas%C4%B1)
 
 ## Linux üzerinde GTK ve FFMPEG Hataları
 
@@ -93,3 +94,7 @@ train_config: {
 ```
 
 > `ssd_mobilenet_v1_quantized_300x300_coco14_sync` modelinde test edilmiştir.
+
+## !python Komutunda Değişkeni Okumaması
+
+Satır içerisinde `undefined` olan bir değişken varsa hiçbir değişken okunmaz.
