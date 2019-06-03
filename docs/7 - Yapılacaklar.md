@@ -1,4 +1,25 @@
-# Yapılacaklar
+# Yapılacaklar <!-- omit in toc -->
+
+## İçerikler <!-- omit in toc -->
+
+- [Tam Otomatikleştirme](#tam-otomatikle%C5%9Ftirme)
+- [Eski Yapılacaklar](#eski-yap%C4%B1lacaklar)
+  - [Sonra Yapılacaklar](#sonra-yap%C4%B1lacaklar)
+  - [Sonradan Eklenecek Scriptleştirme](#sonradan-eklenecek-scriptle%C5%9Ftirme)
+  - [Sonradan Derlenecek Bilgiler](#sonradan-derlenecek-bilgiler)
+    - [TF Verilerini Alma](#tf-verilerini-alma)
+      - [Recover the images from the TFRecord file](#recover-the-images-from-the-tfrecord-file)
+- [Lisans ve Teferruatlar](#lisans-ve-teferruatlar)
+
+## Tam Otomatikleştirme
+
+- [ ] CSV dosyası, XML dosyası ve resimlerden
+- [ ] `num_classes` CSV dosyasından
+- [ ] `labelmap.pbtxr` CSV dosyasından
+- [ ] `num_examples` Eval resmi sayısından
+- [ ] `batch_size` Resim sayısına göre hesaplanacak
+
+## Eski Yapılacaklar
 
 - [ ] **Tensorflow notları buraya taşınacak!**
 - [ ] Her yeni eğitim için yapılacaklar için hızlı notlar oluştur
@@ -13,7 +34,7 @@
   - [ ] PythonPath ile ortam değişkeni ayarlamaya çalışılacak
   - [ ] VsCode, python proje çalıştırıcısı olarak ele alınacak
 
-## Sonra Yapılacaklar
+### Sonra Yapılacaklar
 
 - [ ] TF recordları oluşturma kısmı otomatikleştirelecek ve dizinler bağımlı yollar halinde belirtilecek
   - [ ] `.csv` deki class'lardan label_map oluşturulacak.
@@ -32,24 +53,24 @@
 - [ ] Tf recordları farklı yöntemlerle elde etmeyi araştır
 - [ ] TF recoderlardan resimleri elde etmeyi araştır
 
-## Sonradan Eklenecek Scriptleştirme
+### Sonradan Eklenecek Scriptleştirme
 
 - [ ] Linux için sh script
   - [ ] Protobuf, tensorflow vs. her biri için
 - [ ] Windows için bat executable
 
-## Sonradan Derlenecek Bilgiler
+### Sonradan Derlenecek Bilgiler
 
 - [ ] Yaptığım tekninleri video'ya veya yazıya kayıt edeceğim
   - [ ] csv'lerden alanı seçip tablo formatına alarak class sayılarını görme vs.
 
 <div class="page"/>
 
-### TF Verilerini Alma
+#### TF Verilerini Alma
 
 <https://www.tensorflow.org/tutorials/load_data/tf_records>
 
-#### Recover the images from the TFRecord file
+##### Recover the images from the TFRecord file
 
 ```py
 for image_features in parsed_image_dataset:
