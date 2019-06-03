@@ -2,6 +2,7 @@
 
 ## İçerikler <!-- omit in toc -->
 
+- [Hızlı Notlar](#h%C4%B1zl%C4%B1-notlar)
 - [Tam Otomatikleştirme](#tam-otomatikle%C5%9Ftirme)
 - [Eski Yapılacaklar](#eski-yap%C4%B1lacaklar)
   - [Sonra Yapılacaklar](#sonra-yap%C4%B1lacaklar)
@@ -10,6 +11,18 @@
     - [TF Verilerini Alma](#tf-verilerini-alma)
       - [Recover the images from the TFRecord file](#recover-the-images-from-the-tfrecord-file)
 - [Lisans ve Teferruatlar](#lisans-ve-teferruatlar)
+
+## Hızlı Notlar
+
+- `Veri İşlemleri` alanında resimleri indir
+  - CSV, RECORD gibi dosyaları sen oluştur
+  - TRAIN, EVAL ayrımını sen yap
+  - LABELMAP'i sen oluştur
+- `KONTROL_NOKTASI_ON_EKI`'ni otomatik olarak en yüksek değeri seçerek al (?)
+- Ortak değişkenleri 1 sefer tanımla, diğer formlarda kullanılabilir (?)
+- Modellerle gelen `pipeline.config` eskidir, sorunludur.
+  - Configler için tanımlanmış dizinden otomatik olarak indir
+  - Model ismini kod içerisinden belirleyebilirsin zaten
 
 ## Tam Otomatikleştirme
 
