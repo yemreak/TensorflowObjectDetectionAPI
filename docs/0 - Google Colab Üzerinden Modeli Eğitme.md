@@ -14,6 +14,7 @@
 - Google colabratory, ücretsiz **IPython** destekli sunucu sunan Google hizmetidir
 - Ücretsiz sunucu üzerinden ekran kartını da kullanarak model eğitimi yapılabilmekte
 - Google Colabratory'e [buradan][Google Colabratory] erişebilirsin
+- GPU’yu multiple kullanıcılara bölüştürüyor. Şanslı bazı kullanıcılar %100 share elde ediyor; ama çoğunluğa %5 veriyor.
 
 > Google hesabı gerektirir.
 
