@@ -1,6 +1,6 @@
 # YTensorflow  <!-- omit in toc -->
 
-<!-- Private olduğundan çalışmaz 
+<!-- Private olduğundan çalışmaz
 ![GitHub last commit](https://img.shields.io/github/last-commit/yedhrab/YTensorflow.svg?label=Son%20G%C3%BCncelleme&style=popout)
 ![GitHub](https://img.shields.io/github/license/yedhrab/YTensorflow.svg?label=Lisans&style=popout)
 ![made_with_Markdown](https://img.shields.io/badge/%C4%B0%C3%A7erik-Markdown-blue.svg)
@@ -119,6 +119,7 @@
 
 ## Temel Bilgileri
 
+- PDF olarak görüntülemek için [buraya](./D%C3%B6k%C3%BCmanlar/YTensorflow.pdf) bakabilrisin.
 - Python dili üzerinde makine öğrenimi gibi işlemler için Google tarafından sunulan kütüphanedir.
 - Yabancı Kaynaklar: [📺](https://youtu.be/COlbP62-B-U) [📄](https://buildmedia.readthedocs.org/media/pdf/tensorflow-object-detection-api-tutorial/latest/tensorflow-object-detection-api-tutorial.pdf)
 
