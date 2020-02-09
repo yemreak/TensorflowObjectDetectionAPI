@@ -1,11 +1,9 @@
-# YTensorflow  <!-- omit in toc -->
+# 🕵️‍♂️ YTensorflow Objeect Detection API <!-- omit in toc -->
 
-<!-- Private olduğundan çalışmaz
-![GitHub last commit](https://img.shields.io/github/last-commit/yedhrab/YTensorflow.svg?label=Son%20G%C3%BCncelleme&style=popout)
-![GitHub](https://img.shields.io/github/license/yedhrab/YTensorflow.svg?label=Lisans&style=popout)
+![GitHub last commit](https://img.shields.io/github/last-commit/yedhrab/YTensorflowObjectDetectionAPI.svg?label=Son%20G%C3%BCncelleme&style=popout)
+![GitHub](https://img.shields.io/github/license/yedhrab/YTensorflowObjectDetectionAPI.svg?label=Lisans&style=popout)
 ![made_with_Markdown](https://img.shields.io/badge/%C4%B0%C3%A7erik-Markdown-blue.svg)
-![GitHub repo size](https://img.shields.io/github/repo-size/yedhrab/YTensorflow.svg?label=Boyut&style=popout)
--->
+![GitHub repo size](https://img.shields.io/github/repo-size/yedhrab/YTensorflowObjectDetectionAPI.svg?label=Boyut&style=popout)
 
 <!-- > *Yunus Emre Ak* ile çalışılmıştır. -->
 
