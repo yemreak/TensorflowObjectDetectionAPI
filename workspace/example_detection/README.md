@@ -141,4 +141,4 @@ Her bir model için ayrı dizinler oluşturulur.
 
 ### Excel ile Tablo Gösterimi
 
-![csv](../../res/csv_table.jpg)
+![csv](../../.github/assets/csv_table.jpg)

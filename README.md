@@ -1,4 +1,4 @@
-# 🕵️‍♂️ YTensorflow Objeect Detection API <!-- omit in toc -->
+# 🕵️‍♂️ YTensorflow Object Detection API <!-- omit in toc -->
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/yedhrab/YTensorflowObjectDetectionAPI.svg?label=Son%20G%C3%BCncelleme&style=popout)
 ![GitHub](https://img.shields.io/github/license/yedhrab/YTensorflowObjectDetectionAPI.svg?label=Lisans&style=popout)
@@ -17,7 +17,8 @@
 
 ---
 
-![PDF Yapısı Hakkında Bilgilendirme](https://bit.ly/2QmZtIc)
+![PDF Yapısı Hakkında Bilgilendirme](.github/assets/pdf_annotiations.png)
+<!-- ![PDF Yapısı Hakkında Bilgilendirme](https://bit.ly/2QmZtIc) -->
 
 ---
 
@@ -664,10 +665,10 @@ Her bir etiketten kaç tane olduğunu anlamak için csv dosyalarını açıp all
 - Tablo'dan etiketlenen verileri kontrol edin
 - Fazladan etiketlenmiş verilerin ismini bulup, filename, width vs. verilerin yazıldığı alanda `CTRL` + `F` komutu ile aratıp, uygun dosya ismini ve `xml` dosyasını silin
 
-![csv](res/csv_table1.jpeg)
-![csv](res/csv_table2.jpeg)
-![csv](res/csv_table3.jpeg)
-![csv](res/csv_table4.jpeg)
+![csv](.github/assets/csv_table1.jpeg)
+![csv](.github/assets/csv_table2.jpeg)
+![csv](.github/assets/csv_table3.jpeg)
+![csv](.github/assets/csv_table4.jpeg)
 
 <div class="page"/>
 
