@@ -1126,14 +1126,17 @@ for image_features in parsed_image_dataset:
   display.display(display.Image(data=image_raw))
 ```
 
+
+
 ## 💖 Destek ve İletişim
 
-​[​![Github](https://drive.google.com/uc?id=1PzkuWOoBNMg0uOMmqwHtVoYt0WCqi-O5)​](https://github.com/yedhrab) [​![LinkedIn](https://drive.google.com/uc?id=1hvdil0ZHVEzekQ4AYELdnPOqzunKpnzJ)​](https://www.linkedin.com/in/yemreak/) [​![Website](https://drive.google.com/uc?id=1wR8Ph0FBs36ZJl0Ud-HkS0LZ9b66JBqJ)​](https://yemreak.com/) [​![Mail](https://drive.google.com/uc?id=142rP0hbrnY8T9kj_84_r7WxPG1hzWEcN)​](mailto::yedhrab@gmail.com?subject=YTensorflow%20%7C%20Github)​
+​[​![Github](.github/assets/github_32px.png)​](https://github.com/yedhrab) [​![LinkedIn](.github/assets/linkedin_32px.png)​](https://www.linkedin.com/in/yemreak/) [​![Website](.github/assets/geography_32px.png)​](https://yemreak.com/) [​![Mail](.github/assets/gmail_32px.png)​](mailto:yemreak.com@gmail.com?subject=YTensorflow%20Object%20Detection%20API%20%7C%20GitHub)​
 
-​[​![Patreon](https://drive.google.com/uc?id=11YmCRmySX7v7QDFS62ST2JZuE70RFjDG)](https://www.patreon.com/yemreak/)
+​[​![Patreon](.github/assets/become_a_patron_32px.png)](https://www.patreon.com/yemreak/)
 
 ## 🔏 Lisans
 
 **The** [**Apache 2.0 License**](https://choosealicense.com/licenses/apache-2.0/) **©️ Yunus Emre Ak**
 
-![YEmreAk](https://drive.google.com/uc?id=1Wd_YLVOkAhXPVqFMx_aZyFvyTy_88H-Z)
+![YEmreAk](.github/assets/ysigniture-trans.png)
+
