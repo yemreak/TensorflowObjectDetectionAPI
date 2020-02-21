@@ -14,7 +14,7 @@
 
 Tensorflow ortamının alt paketlerini etkilememesi için ek bir sanal ortamda kurulum sağlamalıyız.
 
-```sh
+```bash
 conda create -n labelImg pyqt # QT grafik kütüphanesi
 conda activate labelImg
 conda install -c anaconda lxml
@@ -27,7 +27,7 @@ Paketlerin kurulumu için alttaki talimatları sırayla uygulayın:
 * LabelImg dosyalarını indirmek için [buraya](https://github.com/tzutalin/labelImg/archive/master.zip) tıklayın
 * Diğer işlemler için indirdiğiniz dosya dizininde cmd açıp alttaki komutları yazın
 
-```sh
+```bash
 # labelImg-master.zip dizininde
 powershell.exe Expand-Archive labelImg-master.zip .
 ren labelImg-master labelImg
@@ -43,7 +43,7 @@ _'pyrcc5' is not recognized as an internal or external command_ hatası gelirse,
 
 ## ✅ Kurulumu Test Etme
 
-```sh
+```bash
 conda activate tensorflow-cpu
 cd %USERPROFILE%\Tensorflow\addons\labelImg
 python labelImg.py
