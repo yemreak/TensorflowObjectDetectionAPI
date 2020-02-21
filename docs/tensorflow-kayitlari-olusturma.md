@@ -22,19 +22,15 @@ Resimlerde hata olduğu zaman eğitim aşamasında tensorflow modeli çalışma 
 {% tabs %}
 {% tab title="✴️ Windows" %}
 ```text
-python scripts\preprocessing\check_images.py ^
-    -i workspace\example_detection\images\train​
-python scripts\preprocessing\check_images.py ^
-    -i workspace\example_detection\images\eval
+python scripts\preprocessing\check_images.py -i workspace\example_detection\images\train​
+python scripts\preprocessing\check_images.py -i workspace\example_detection\images\eval
 ```
 {% endtab %}
 
 {% tab title="🐧 Linux" %}
 ```
-python scripts\preprocessing\check_images.py \
-    -i workspace/example_detection/images/train​
-python scripts\preprocessing\check_images.py \
-    -i workspace/example_detection/images/eval
+python scripts\preprocessing\check_images.py -i workspace/example_detection/images/train​
+python scripts\preprocessing\check_images.py -i workspace/example_detection/images/eval
 ```
 {% endtab %}
 {% endtabs %}

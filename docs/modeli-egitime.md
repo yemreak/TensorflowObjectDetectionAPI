@@ -12,28 +12,9 @@ Modeli önerilen dosya olan `model_main.py` ile eğitmek için buraya bakmalıs�
 
 Çalışma ortamının düzgün ilerlemesi adına alttaki komut ile gerekli yere scripti kopyalayalım
 
-{% tabs %}
-{% tab title="✴️ Windows" %}
-
-```sh
-copy %TENSORFLOW%\models\research\object_detection\legacy\train.py ^
-%TENSORFLOW%\workspace\example_detectioncopy ^
-%TENSORFLOW%\models\research\object_detection\model_main.py
+```text
+copy %TENSORFLOW%\models\research\object_detection\legacy\train.py %TENSORFLOW%\workspace\example_detectioncopy %TENSORFLOW%\models\research\object_detection\model_main.py
 ```
-
-{% endtab %}
-
-{% tab title="🐧 Linux" %}
-
-```sh
-copy %TENSORFLOW%/models/research/object_detection/legacy/train.py \
-%TENSORFLOW%/workspace/example_detectioncopy \
-%TENSORFLOW%/models/research/object_detection/model_main.py
-```
-
-{% endtab %}
-{% endtabs %}
-
 
 ## 📜 Eğitimde Raporlanacak Seviyeyi Ayarlama \(isteğe Bağlı\)
 
@@ -60,9 +41,7 @@ pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonA
 
 {% tab title="🐧 Linux" %}
 ```bash
-git clone https://github.com/cocodataset/cocoapi.gitcd 
-cocoapi/PythonAPImakecp -r pycocotools /content/models/research/
-cd ../..rm -rf cocoapi
+git clone https://github.com/cocodataset/cocoapi.gitcd cocoapi/PythonAPImakecp -r pycocotools /content/models/research/cd ../..rm -rf cocoapi
 ```
 {% endtab %}
 {% endtabs %}
@@ -117,8 +96,10 @@ python train.py \
 Eskimiş olan bir eğitim kodudur, `model_main.py` kod dosyası tensorflow tarafından önerilir.
 {% endhint %}
 {% endtab %}
+{% endtabs %}
 
-{% tab title="⭐ Örnek Çıktı" %}
+## ⭐ Örnek Eğitim Çıktısı
+
 ```bash
 INFO:tensorflow:depth of additional conv before box predictor: 0
 INFO:tensorflow:depth of additional conv before box predictor: 0
@@ -147,8 +128,6 @@ INFO:tensorflow:global step 13: loss = 7.4329 (0.906 sec/step)
 INFO:tensorflow:global step 14: loss = 7.8270 (0.897 sec/step)
 INFO:tensorflow:global step 15: loss = 6.4877 (0.894 sec/step)
 ```
-{% endtab %}
-{% endtabs %}
 
 ## 🧲 Eğitimi Etkileyen Faktörler
 
@@ -180,16 +159,8 @@ TensorBoard 1.6.0 at http://YOUR-PC:6006 (Press CTRL+C to quit)
 
 **Anaconda Prompt** üzerinden alttaki komutlar uygulanır:
 
-```sh
-activate tensorflow_cpu # ya da gpu​copy 
-%TENSORFLOW%\models\research\object_detection/export_inference_graph.py \
-%TENSORFLOW%\workspace\example_detection​
-cd %TENSORFLOW%\workspace\example_detection​
-python export_inference_graph.py \
---input_type image_tensor \
---pipeline_config_path training/<yapılandırma_dosyası> \
---trained_checkpoint_prefix training/model.ckpt-<checkpoint> \
---output_directory trained-inference-graphs/output_inference_graph_v1.pb
+```text
+activate tensorflow_cpu # ya da gpu​copy %TENSORFLOW%\models\research\object_detection/export_inference_graph.py %TENSORFLOW%\workspace\example_detection​cd %TENSORFLOW%\workspace\example_detection​python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/<yapılandırma_dosyası> --trained_checkpoint_prefix training/model.ckpt-<checkpoint> --output_directory trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
 * `<yapılandırma_dosyası>` Modelimizin yapılandırma dosyasının tam adı
