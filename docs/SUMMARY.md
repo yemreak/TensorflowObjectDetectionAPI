@@ -11,3 +11,4 @@
 * [👨‍🏫 Modeli Eğitime](modeli-egitime.md)
 * [🌠 Colab Üzerinden Tensorflow](colab-uzerinden-tensorflow.md)
 * [🐞 Hata Notları](hata-notlari.md)
+
