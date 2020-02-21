@@ -27,6 +27,9 @@ Paketlerin kurulumu için alttaki talimatları sırayla uygulayın:
 * LabelImg dosyalarını indirmek için [buraya](https://github.com/tzutalin/labelImg/archive/master.zip) tıklayın
 * Diğer işlemler için indirdiğiniz dosya dizininde cmd açıp alttaki komutları yazın
 
+{% tabs %}
+{% tab title="✴️ Windows" %}
+
 ```bash
 # labelImg-master.zip dizininde
 powershell.exe Expand-Archive labelImg-master.zip .
@@ -37,11 +40,25 @@ cd %TENSORFLOW%\addons\labelImg
 pyrcc5 -o resources.py resources.qrc # QT grafiklerinin oluşturulması
 ```
 
+{% endtab %}
+
+{% tab title="🐧 Linux" %}
+
+🙄
+
+{% endtab %}
+{% endtabs %}
+
+
+
 {% hint style="warning" %}
 _'pyrcc5' is not recognized as an internal or external command_ hatası gelirse, yüklediğiniz `pyqt` sürümüne göre komutu kullanın \(`pyrcc<pyqt_sürümü_ilk_basamağı>`\)
 {% endhint %}
 
 ## ✅ Kurulumu Test Etme
+
+{% tabs %}
+{% tab title="✴️ Windows" %}
 
 ```bash
 conda activate tensorflow-cpu
@@ -49,4 +66,19 @@ cd %USERPROFILE%\Tensorflow\addons\labelImg
 python labelImg.py
 # python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 ```
+
+{% endtab %}
+
+{% tab title="🐧 Linux" %}
+
+```bash
+conda activate tensorflow-cpu
+cd %USERPROFILE%/Tensorflow/addons/labelImg
+python labelImg.py
+# python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+```
+
+{% endtab %}
+{% endtabs %}
+
 
