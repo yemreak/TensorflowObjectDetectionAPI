@@ -1,5 +1,8 @@
-# Dökümanlar
+---
+description: >-
+  Tensorflow Object Detection API ile Obje Bulma ve kullanımı için gerekli
+  talimatlarım
+---
 
-Bu alan dökümantasyon için ayrılmıştır.
+# 🕵️‍♂️ Tensorflow Object Detection API
 
-> [Resmi dökümantasyon](https://github.com/tensorflow/models/tree/master/research/object_detection/g3doc)
