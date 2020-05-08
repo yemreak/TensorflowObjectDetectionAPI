@@ -2,6 +2,8 @@
 
 🕵️‍♂️ Tensorflow Object Detection API ile Obje Bulma ve kullanımı için gerekli talimatlarım
 
+- [🟡 Tensorflow object detection modellerini colab üzerinden eğitme scripti](https://colab.research.google.com/drive/1nseyw_dIhhesbXhRyC-qwnduNlLcU0N3?usp=sharing)
+
 > 📢 Tüm dokümanlar [🧠 Yapay Zeka ~ YEmreAk](https://ai.yemreak.com/tensorflow-object-detection-api) üzerinde derlenmektedir.
 
 
